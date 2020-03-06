@@ -1,0 +1,6 @@
+substitutions:
+  device_name: voron2059
+  friendly_name: Voron 2.059
+
+<<: !include _sonoff_s31.yaml
+<<: !include _common.yaml
