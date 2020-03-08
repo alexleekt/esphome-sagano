@@ -40,3 +40,4 @@ switch:
     pin: GPIO12
     name: ${friendly_name} Relay
     id: relay
+    restore_mode: RESTORE_DEFAULT_ON
