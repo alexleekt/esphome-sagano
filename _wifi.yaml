@@ -1,5 +1,5 @@
 wifi:
-  ssid: "PandaIoT"
+  ssid: !secret wifi_ssid
   password: !secret wifi_password
   fast_connect: true
   use_address: ${ip_address}
