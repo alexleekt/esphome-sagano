@@ -3,6 +3,11 @@ esphome:
   platform: ESP8266
   board: esp01_1m
 
+sensor:
+  - platform: wifi_signal
+    name: ${device_name}_wifi_signal
+    update_interval: 30s
+
 binary_sensor:
   - platform: gpio
     pin:
