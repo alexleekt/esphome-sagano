@@ -1,27 +1,9 @@
-esphome:
-  name: ${device_name}
-  platform: ESP8266
-  board: esp01_1m
+<<: !include _sonoff_s31lite.yaml
 
 # Configuration for power monitor
 uart:
   rx_pin: RX
   baud_rate: 4800
-
-binary_sensor:
-  - platform: gpio
-    pin:
-      number: GPIO0
-      mode: INPUT_PULLUP
-      inverted: True
-    name: ${friendly_name} Button
-    on_press:
-      - switch.toggle: relay
-
-status_led:
-  pin:
-    inverted: True
-    number: GPIO13
 
 sensor:
   - platform: wifi_signal
@@ -34,10 +16,3 @@ sensor:
       name: ${friendly_name} Voltage
     power:
       name: ${friendly_name} Power
-
-switch:
-  - platform: gpio
-    pin: GPIO12
-    name: ${friendly_name} Relay
-    id: relay
-    restore_mode: RESTORE_DEFAULT_ON
