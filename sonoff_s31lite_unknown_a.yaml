@@ -1,7 +1,0 @@
-substitutions:
-  device_name: s31lite_unknown_a
-  friendly_name: S31 Lite (Unknown A)
-  ip_address: 192.168.90.173
-
-<<: !include _sonoff_s31lite.yaml
-<<: !include _common.yaml

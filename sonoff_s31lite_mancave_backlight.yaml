@@ -1,0 +1,6 @@
+substitutions:
+  device_name: mancave_backlight
+  friendly_name: Man cave back light
+
+<<: !include _sonoff_s31lite.yaml
+<<: !include _common.yaml
