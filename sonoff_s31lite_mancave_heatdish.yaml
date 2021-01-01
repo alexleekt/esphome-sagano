@@ -1,0 +1,6 @@
+substitutions:
+  device_name: mancave_heatdish
+  friendly_name: Man Cave Heat Dish
+
+<<: !include _sonoff_s31lite.yaml
+<<: !include _common.yaml
