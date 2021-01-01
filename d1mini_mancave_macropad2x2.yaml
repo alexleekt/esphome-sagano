@@ -1,0 +1,36 @@
+substitutions:
+  device_name: mancave_macropad2x2
+  friendly_name: Man Cave Macro Pad 2x2
+
+esphome:
+  name: ${device_name}
+  platform: ESP8266
+  board: d1_mini
+
+<<: !include _common.yaml
+
+binary_sensor:
+  - platform: gpio
+    name: ${friendly_name} Button D1
+    pin:
+      number: D1
+      mode: INPUT_PULLUP
+      inverted: True
+  - platform: gpio
+    name: ${friendly_name} Button D2
+    pin:
+      number: D2
+      mode: INPUT_PULLUP
+      inverted: True
+  - platform: gpio
+    name: ${friendly_name} Button D4
+    pin:
+      number: D4
+      mode: INPUT_PULLUP
+      inverted: True
+  - platform: gpio
+    name: ${friendly_name} Button D5
+    pin:
+      number: D5
+      mode: INPUT_PULLUP
+      inverted: True
