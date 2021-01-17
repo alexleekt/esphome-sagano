@@ -3,4 +3,3 @@ substitutions:
   friendly_name: Man cave back light
 
 <<: !include _sonoff_s31lite.yaml
-<<: !include _common.yaml

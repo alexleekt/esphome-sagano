@@ -1,7 +1,5 @@
 substitutions:
   device_name: krkrokit6
   friendly_name: KRK Rokit 6
-  ip_address: 192.168.90.171
 
 <<: !include _sonoff_s31lite.yaml
-<<: !include _common.yaml

@@ -1,7 +1,5 @@
 substitutions:
   device_name: voron2059power
   friendly_name: Voron 2.059 Power
-  ip_address: 192.168.90.150
 
 <<: !include _sonoff_s31.yaml
-<<: !include _common.yaml
