@@ -1,3 +1,8 @@
+# substitutions:
+#   device_name: device_abc
+#   friendly_name: Device ABC
+
+<<: !include _common.yaml
 <<: !include _sonoff_s31lite.yaml
 
 # Configuration for power monitor
@@ -6,9 +11,6 @@ uart:
   baud_rate: 4800
 
 sensor:
-  - platform: wifi_signal
-    name: ${device_name}_wifi_signal
-    update_interval: 30s
   - platform: cse7766
     current:
       name: ${friendly_name} Current

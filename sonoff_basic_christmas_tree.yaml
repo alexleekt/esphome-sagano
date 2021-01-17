@@ -3,4 +3,3 @@ substitutions:
   friendly_name: Christmas Tree
 
 <<: !include _sonoff_basic.yaml
-<<: !include _common.yaml

@@ -3,4 +3,3 @@ substitutions:
   friendly_name: Five Star Light
 
 <<: !include _sonoff_basic.yaml
-<<: !include _common.yaml

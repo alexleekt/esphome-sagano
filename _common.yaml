@@ -1,3 +1,5 @@
+<<: !include _wifi.yaml
+
 api:
 
 logger:
@@ -11,5 +13,3 @@ time:
       - 0.pool.ntp.org
       - 1.pool.ntp.org
       - 2.pool.ntp.org
-
-<<: !include _wifi.yaml

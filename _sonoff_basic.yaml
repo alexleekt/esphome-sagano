@@ -1,12 +1,13 @@
+# substitutions:
+#   device_name: device_abc
+#   friendly_name: Device ABC
+
+<<: !include _common.yaml
+
 esphome:
   name: ${device_name}
   platform: ESP8266
   board: esp01_1m
-
-sensor:
-  - platform: wifi_signal
-    name: ${device_name}_wifi_signal
-    update_interval: 30s
 
 binary_sensor:
   - platform: gpio
@@ -14,13 +15,13 @@ binary_sensor:
       number: GPIO0
       mode: INPUT_PULLUP
       inverted: True
-    name: "${friendly_name} Button"
+    name: ${friendly_name}
     on_press:
       - switch.toggle: relay
 
 switch:
   - platform: gpio
-    name: "${friendly_name} Relay"
+    name: ${friendly_name}
     pin: GPIO12
     id: relay
 
