@@ -15,7 +15,7 @@ binary_sensor:
       number: GPIO0
       mode: INPUT_PULLUP
       inverted: True
-    name: ${friendly_name}
+    name: ${friendly_name} Button
     on_press:
       - switch.toggle: relay
 
@@ -27,6 +27,6 @@ status_led:
 switch:
   - platform: gpio
     pin: GPIO12
-    name: ${friendly_name}
+    name: ${friendly_name} Relay
     id: relay
     restore_mode: RESTORE_DEFAULT_OFF

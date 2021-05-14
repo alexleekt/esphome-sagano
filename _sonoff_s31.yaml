@@ -10,6 +10,13 @@ uart:
   rx_pin: RX
   baud_rate: 4800
 
+switch:
+  - platform: gpio
+    pin: GPIO12
+    name: ${friendly_name} Relay
+    id: relay
+    restore_mode: RESTORE_DEFAULT_ON
+
 sensor:
   - platform: cse7766
     current:
@@ -17,4 +24,4 @@ sensor:
     voltage:
       name: ${friendly_name} Voltage
     power:
-      name: ${friendly_name} Power
+      name: ${friendly_name} Wattage
