@@ -1,5 +1,0 @@
-substitutions:
-  device_name: voron2059power
-  friendly_name: Voron 2.059 Power
-
-<<: !include _sonoff_s31.yaml

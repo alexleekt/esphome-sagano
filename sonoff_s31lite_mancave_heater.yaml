@@ -1,5 +1,0 @@
-substitutions:
-  device_name: mancave_heater
-  friendly_name: Man Cave Heater
-
-<<: !include _sonoff_s31lite.yaml

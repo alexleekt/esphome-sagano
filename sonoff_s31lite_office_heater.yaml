@@ -1,0 +1,5 @@
+substitutions:
+  device_name: office_heatdish
+  friendly_name: Office Heat Dish
+
+<<: !include _sonoff_s31lite.yaml
