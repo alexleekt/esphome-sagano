@@ -1,0 +1,52 @@
+substitutions:
+  device_name: goveebridge
+  friendly_name: ESP32 Govee Bridge
+  govee1_mac: A4:C1:38:BC:D9:03
+  govee1_name: GVH5075_D903
+  govee2_mac: A4:C1:38:BC:D9:03
+  govee3_mac: A4:C1:38:BC:D9:03
+  govee4_mac: A4:C1:38:BC:D9:03
+
+<<: !include includes/_esp32doit.yaml
+
+sensor:
+    - platform: template
+      name: "${govee1_name} Humidity"
+      id: govee1_humidity
+      unit_of_measurement: '%'
+      icon: "mdi:water-percent"
+    - platform: template
+      name: "${govee1_name} Temperature Fahrenheit"
+      id: govee1_temperature_f
+      unit_of_measurement: '° F'
+      icon: "mdi:thermometer"
+    - platform: template
+      name: "${govee1_name} Temperature Celcius"
+      id: govee1_temperature_c
+      unit_of_measurement: '° C'
+      icon: "mdi:thermometer"
+    - platform: template
+      name: "${govee1_name} Battery"
+      id: govee1_battery
+      unit_of_measurement: '%'
+      icon: "mdi:battery"
+
+esp32_ble_tracker:
+  on_ble_advertise:
+    - mac_address: ${govee1_mac}
+      then:
+        - lambda: |-
+            for (auto data : x.get_manufacturer_datas()) {
+              if(data.data.size()==6) {
+                const int basenum = (int16_t(data.data[1]) << 16) + (int16_t(data.data[2]) << 8) + int16_t(data.data[3]);
+                const float temperature_c = basenum / 10000.0f;
+                const float temperature_f = (temperature_c*9.0/5.0 + 32.0);
+                const float humidity = (basenum % 1000) / 10.0f;
+                const float battery_level = uint16_t(data.data[4]) / 1.0f;
+                int16_t rssi=x.get_rssi();
+                id(govee1_humidity).publish_state(humidity);
+                id(govee1_temperature_c).publish_state(temperature_c);
+                id(govee1_temperature_f).publish_state(temperature_f);
+                id(govee1_battery).publish_state(battery_level);
+              } 
+            }

@@ -1,5 +1,0 @@
-substitutions:
-  device_name: five_star_light
-  friendly_name: Five Star Light
-
-<<: !include _sonoff_basic.yaml
