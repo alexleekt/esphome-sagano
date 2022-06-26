@@ -1,5 +1,5 @@
 substitutions:
-  device_name: mancave_esp32cam
+  device_name: esp32cam
   friendly_name: Man Cave ESP32 Camera
 
-<<: !include _esp32cam.yaml
+<<: !include includes/_esp32cam.yaml

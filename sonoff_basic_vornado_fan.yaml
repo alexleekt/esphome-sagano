@@ -1,5 +1,5 @@
 substitutions:
-  device_name: vornado_fan
+  device_name: vornadofan
   friendly_name: Vornado Fan
 
-<<: !include _sonoff_basic.yaml
+<<: !include includes/_sonoff_basic.yaml

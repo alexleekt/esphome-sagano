@@ -1,5 +1,5 @@
 substitutions:
-  device_name: mancave_macropad2x2
+  device_name: macropad2x2
   friendly_name: Man Cave Macro Pad 2x2
 
 esphome:
@@ -7,7 +7,7 @@ esphome:
   platform: ESP8266
   board: d1_mini
 
-<<: !include _common.yaml
+<<: !include includes/_common.yaml
 
 binary_sensor:
   - platform: gpio

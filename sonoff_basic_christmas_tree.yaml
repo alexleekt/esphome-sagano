@@ -1,5 +1,5 @@
 substitutions:
-  device_name: christmas_tree
+  device_name: christmastree
   friendly_name: Christmas Tree
 
-<<: !include _sonoff_basic.yaml
+<<: !include includes/_sonoff_basic.yaml

@@ -1,3 +1,7 @@
+# substitutions:
+#   device_name: device_abc
+#   friendly_name: Device ABC
+
 <<: !include _wifi.yaml
 
 api:
@@ -13,3 +17,7 @@ time:
       - 0.pool.ntp.org
       - 1.pool.ntp.org
       - 2.pool.ntp.org
+
+button:
+  - platform: restart
+    name: ${friendly_name} [Restart Device]
