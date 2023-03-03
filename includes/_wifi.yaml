@@ -15,18 +15,24 @@ web_server:
 
 sensor:
   - platform: wifi_signal
+    internal: true
     name: ${friendly_name} WiFi Signal
-    update_interval: 30s
+    update_interval: 60s
 
 text_sensor:
   - platform: wifi_info
     ip_address:
+      internal: true
       name: ${friendly_name} IP Address
     ssid:
+      internal: true
       name: ${friendly_name} SSID
     bssid:
+      internal: true
       name: ${friendly_name} BSSID
     mac_address:
+      internal: true
       name: ${friendly_name} Mac Address
   - platform: version
+    internal: true
     name: ${friendly_name} ESPHome Version

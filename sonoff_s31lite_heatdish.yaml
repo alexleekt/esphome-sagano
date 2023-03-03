@@ -1,0 +1,5 @@
+substitutions:
+  device_name: heatdish
+  friendly_name: Heat Dish
+
+<<: !include includes/_sonoff_s31lite.yaml

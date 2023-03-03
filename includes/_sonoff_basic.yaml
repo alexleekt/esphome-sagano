@@ -11,11 +11,12 @@ esphome:
 
 binary_sensor:
   - platform: gpio
+    internal: true
+    id: _button
     pin:
       number: GPIO0
       mode: INPUT_PULLUP
       inverted: True
-    name: ${friendly_name}
     on_press:
       - switch.toggle: relay
 

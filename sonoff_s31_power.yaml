@@ -1,5 +1,0 @@
-substitutions:
-  device_name: s31power
-  friendly_name: S31 Power
-
-<<: !include includes/_sonoff_s31.yaml

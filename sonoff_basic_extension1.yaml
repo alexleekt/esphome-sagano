@@ -1,0 +1,5 @@
+substitutions:
+  device_name: extension1
+  friendly_name: Extension 1
+
+<<: !include includes/_sonoff_basic.yaml

@@ -9,6 +9,7 @@ api:
 logger:
 
 ota:
+  password: !secret ota_password
 
 time:
   - platform: sntp
@@ -20,4 +21,5 @@ time:
 
 button:
   - platform: restart
+    internal: true
     name: ${friendly_name} [Restart Device]
