@@ -8,9 +8,6 @@ api:
 
 logger:
 
-ota:
-  password: !secret ota_password
-
 time:
   - platform: sntp
     id: sntp_time
